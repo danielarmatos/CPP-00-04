@@ -13,19 +13,25 @@
 #include "Zombie.hpp"
 
 Zombie* newZombie( std::string name );
-void randomChump( std::string name );
+Zombie* zombieHorde( int N, std::string name );
 
 int main(int argc, char **argv)
 {
-	Zombie *zombie1;
+	Zombie *zombies;
 	if (argc < 2) {
-		std::cout	<< "Pass the newZombie and randomChump names as arguments"
+		std::cout	<< "Pass the number of zombies as arguments"
 					<< std::endl;
 		return (0);
 	}
-	zombie1 = newZombie(argv[1]);
-	if (argc > 2)
-		randomChump(argv[2]);
-	delete zombie1;
+	int size = atoi(argv[1]);
+	if (argc == 2)
+		zombies = zombieHorde(size, "Daniela");
+	else
+		zombies = zombieHorde(size, argv[2]);
+	if (!zombies)
+		return (0);
+	for (int i = 0; i < size; i++)
+		zombies[i].announce();
+	delete[] zombies;
 	return (0);
 }

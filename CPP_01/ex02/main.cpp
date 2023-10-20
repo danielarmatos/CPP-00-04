@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dreis-ma <dreis-ma@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 20:43:31 by dreis-ma          #+#    #+#             */
-/*   Updated: 2023/10/17 20:43:34 by dreis-ma         ###   ########.fr       */
+/*   Created: 2023/10/17 20:44:34 by dreis-ma          #+#    #+#             */
+/*   Updated: 2023/10/17 20:44:36 by dreis-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <iostream>
 
-Zombie* newZombie( std::string name )
+int main(void)
 {
-	Zombie *zombie = new Zombie;
+	std::string str = "HI THIS IS BRAIN";
+	std::string *stringPTR = &str;
+	std::string &stringREF = str;
 
-	zombie->setName(name);
-	zombie->announce();
-	return (zombie);
+	std::cout << &str << std::endl;
+	std::cout << &stringPTR << std::endl;
+	std::cout << &stringREF << std::endl;
+
+	std::cout << str << std::endl;
+	std::cout << stringPTR << std::endl;
+	std::cout << stringREF << std::endl;
 }
