@@ -16,9 +16,9 @@
 
 std::string replaceStr(const std::string &str, const std::string &search,
 					   const std::string &replace) {
-	std::string result;
-	size_t pos = 0;
-	size_t lastPos = 0;
+	std::string	result;
+	size_t		pos;
+	size_t		lastPos = 0;
 
 	while ((pos = str.find(search, lastPos)) != std::string::npos) {
 		result += str.substr(lastPos, pos - lastPos);
@@ -54,6 +54,7 @@ int main(int argc, char **argv)
 		fileContent += "\n";
 	}
 	std::string result = replaceStr(fileContent, argv[2], argv[3]);
-	readFile.close();
 	newFile << result;
+	readFile.close();
+	newFile.close();
 }
