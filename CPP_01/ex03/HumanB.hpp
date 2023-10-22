@@ -15,7 +15,7 @@
 
 #include "Weapon.hpp"
 
-class HumanB{
+class HumanB {
 private:
     std::string name;
     Weapon      *weapon;
@@ -26,7 +26,7 @@ public:
     ~HumanB(void);
 
     void    attack(void);
-    void    setWeapon(Weapon weapon);
+    void    setWeapon(Weapon &weapon);
 };
 
 #endif

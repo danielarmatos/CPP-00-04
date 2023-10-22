@@ -15,17 +15,17 @@
 
 #include "Weapon.hpp"
 
-class HumanA{
+class HumanA {
 private:
     std::string name;
-    Weapon      *weapon;
+    Weapon      &weapon;
 
 public:
     HumanA();
     HumanA(const std::string &name, Weapon &weapon);
     ~HumanA(void);
 
-    void        attack(void);
+    void	attack(void);
 };
 
 #endif
