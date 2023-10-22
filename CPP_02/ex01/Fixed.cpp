@@ -22,6 +22,16 @@ Fixed::Fixed(const Fixed &fixed) {
 	*this = fixed;
 }
 
+Fixed::Fixed(const int &value) {
+    std::cout << "Float constructor called" << std::endl;
+    this->value = value;
+}
+
+Fixed::Fixed(const float &value) {
+    std::cout << "Int constructor called" << std::endl;
+    this->value = value;
+}
+
 Fixed::~Fixed() {
 	std::cout << "Destructor called" << std::endl;
 }
@@ -44,4 +54,13 @@ Fixed & Fixed::operator=(const Fixed &fixed) {
 	std::cout << "Copy assignment operator called" << std::endl;
     setRawBits(fixed.getRawBits());
 	return (*this);
+}
+
+float Fixed::toFloat( void ) const {
+    float floatingPointValue = static_cast<float>(this->value);
+    return (floatingPointValue);
+}
+
+int Float::toInt( void ) const {
+    return (this->value);
 }
