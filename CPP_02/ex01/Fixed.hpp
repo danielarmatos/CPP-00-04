@@ -36,7 +36,9 @@ public:
 
     float toFloat( void ) const;
     int toInt( void ) const;
-  //  Fixed & operator<<(const Fixed &fixed);
 };
+
+//Fixed & operator<<(const Fixed &fixed);
+std::ostream& operator<<(std::ostream& out, Fixed const& value);
 
 #endif

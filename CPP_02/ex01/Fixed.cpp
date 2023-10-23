@@ -61,6 +61,11 @@ float Fixed::toFloat( void ) const {
     return (floatingPointValue);
 }
 
-int Float::toInt( void ) const {
+int Fixed::toInt( void ) const {
     return (this->value);
+}
+
+std::ostream& operator<<(std::ostream& out, Fixed const& value) {
+    out << value.toFloat();
+    return (out);
 }
