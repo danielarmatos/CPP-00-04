@@ -22,13 +22,13 @@ Fixed::Fixed(const Fixed &fixed) {
 	*this = fixed;
 }
 
-Fixed::Fixed(const int &value) {
-    std::cout << "Float constructor called" << std::endl;
+Fixed::Fixed(const int &value) : value(0) {
+    std::cout << "Int constructor called" << std::endl;
     this->value = value;
 }
 
 Fixed::Fixed(const float &value) {
-    std::cout << "Int constructor called" << std::endl;
+    std::cout << "Float constructor called" << std::endl;
     this->value = value;
 }
 
@@ -65,7 +65,9 @@ int Fixed::toInt( void ) const {
     return (this->value);
 }
 
-std::ostream& operator<<(std::ostream& out, Fixed const& value) {
-    out << value.toFloat();
-    return (out);
+std::ostream& operator<<(std::ostream& out, const Fixed& value) {
+	int integer = Fixed::ge
+	float floatValue = static_cast<float>(value.value) + static_cast<float>(value.fractBits) / 100.0;
+	out << floatValue;
+	return (out);
 }

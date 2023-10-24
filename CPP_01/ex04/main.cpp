@@ -20,6 +20,7 @@ std::string replaceStr(const std::string &str, const std::string &search,
 	size_t		pos;
 	size_t		lastPos = 0;
 
+	// str.find will try to find the 'search' string starting from the lastPosition
 	while ((pos = str.find(search, lastPos)) != std::string::npos) {
 		result += str.substr(lastPos, pos - lastPos);
 		result += replace;
@@ -34,7 +35,7 @@ int main(int argc, char **argv)
 	if (argc < 4) {
 		std::cout	<< "Please pass three parameters in the following order: "
 					<< "a filename and two strings, s1 and s2." << std::endl;
-		return (0);
+		return (1);
 	}
 	// ifstream -> Reads from files
 	std::ifstream readFile(argv[1]);
@@ -57,4 +58,5 @@ int main(int argc, char **argv)
 	newFile << result;
 	readFile.close();
 	newFile.close();
+	return (0);
 }

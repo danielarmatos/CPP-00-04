@@ -13,6 +13,8 @@
 #ifndef FIXED_HPP
 #define FIXED_HPP
 
+#include <iostream>
+
 class Fixed {
 private:
 	int value;
@@ -38,7 +40,6 @@ public:
     int toInt( void ) const;
 };
 
-//Fixed & operator<<(const Fixed &fixed);
-std::ostream& operator<<(std::ostream& out, Fixed const& value);
+std::ostream& operator<<(std::ostream& out, const Fixed& value) ;
 
 #endif

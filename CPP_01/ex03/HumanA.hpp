@@ -21,7 +21,6 @@ private:
     Weapon      &weapon;
 
 public:
-    HumanA();
     HumanA(const std::string &name, Weapon &weapon);
     ~HumanA(void);
 

@@ -15,7 +15,7 @@
 Zombie* zombieHorde( int N, std::string name ) {
 	Zombie *zombies;
 
-	if (N < 1)
+	if (N < 1 || name.empty())
 		return (NULL);
 	zombies = new Zombie[N];
 	for (int i = 0; i < N; i++)
