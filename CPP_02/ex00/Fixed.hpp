@@ -15,8 +15,8 @@
 
 class Fixed {
 private:
-	int value;
-	static const int fractBits = 8;
+	int fixedPoint;
+	static const int fractionalBits = 8;
 
 public:
 	// Orthodox canonical class form:
