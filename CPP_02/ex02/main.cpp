@@ -13,7 +13,7 @@
 #include <iostream>
 #include "Fixed.hpp"
 
-/*int main( void ) {
+int main( void ) {
 	Fixed a;
 	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
 	std::cout << a << std::endl;
@@ -24,8 +24,8 @@
 	std::cout << b << std::endl;
 	std::cout << Fixed::max( a, b ) << std::endl;
 	return 0;
-}*/
-
+}
+/*
 int main( void ) {
 	Fixed a(5);
 	Fixed b(10);
@@ -53,4 +53,4 @@ int main( void ) {
 	if (c != a)
 		std::cout << c << " is not equal to " << a << std::endl;
 	return 0;
-}
+}*/
