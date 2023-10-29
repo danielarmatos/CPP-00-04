@@ -19,6 +19,11 @@ public:
     Point(const Point &Point);
     ~Point();
     Point &operator=(const Point &Point);
+
+    void setX(const float value);
+    void setY(const float value);
+    float getX(void);
+    float getY(void);
 };
 
 #endif
