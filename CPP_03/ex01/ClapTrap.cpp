@@ -17,7 +17,7 @@ ClapTrap::ClapTrap() : hitPoints(10),
 	std::cout << YELLOW << "ClapTrap created" << RESET<< std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) :	name(name), hitPoints(10),
+ClapTrap::ClapTrap(const std::string& name) :	name(name), hitPoints(10),
 										energyPoints(10), attackDamage(0) {
 	std::cout	<< YELLOW << "ClapTrap " << this->name << " created" << RESET
 				<< std::endl;
@@ -37,7 +37,7 @@ ClapTrap::ClapTrap(const ClapTrap& other) {
 				<< " created (Copy constructor)" << RESET << std::endl;
 }
 
-ClapTrap& ClapTrap::operator=(const ClapTrap &other) {
+ClapTrap& ClapTrap::operator=(const ClapTrap& other) {
 	if (this != &other) {
 		name = other.name;
 		hitPoints = other.hitPoints;

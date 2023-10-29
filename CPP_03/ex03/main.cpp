@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
-#include "FragTrap.hpp"
-#include "ScavTrap.hpp"
 #include "DiamondTrap.hpp"
 
 int main(int argc, char **argv) {
@@ -20,11 +18,12 @@ int main(int argc, char **argv) {
 		std::cout	<< "Pass 2 ScavTrap names as arguments" << std::endl;
 		return (0);
 	}
-
 	DiamondTrap trap (argv[1]);
-//	trap.attack(argv[2]);
-//	trap.beRepaired(5);
-//	trap.takeDamage(5);
-//	trap.highFivesGuy();
+	DiamondTrap trap2 (argv[2]);
+	trap.attack(argv[2]);
+	trap2.takeDamage(30);
+	trap.beRepaired(5);
+	trap.takeDamage(5);
+	trap.highFivesGuy();
 	trap.whoAmI();
 }

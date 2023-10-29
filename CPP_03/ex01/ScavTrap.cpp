@@ -13,11 +13,14 @@
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap() {
+	this->hitPoints = 100;
+	this->energyPoints = 50;
+	this->attackDamage = 20;
 	std::cout	<< YELLOW <<  "ScavTrap created"
 				<< RESET << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name) {
+ScavTrap::ScavTrap(const std::string& name) {
 	this->name = name;
 	this->hitPoints = 100;
 	this->energyPoints = 50;
@@ -26,12 +29,7 @@ ScavTrap::ScavTrap(std::string name) {
 				 << std::endl;
 }
 
-ScavTrap::~ScavTrap() {
-	std::cout	<< YELLOW <<  "ScavTrap destroyed"
-				 << RESET << std::endl;
-}
-
-ScavTrap::ScavTrap(const ScavTrap& other) {
+ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other) {
 	*this = other;
 	std::cout	<< YELLOW << "ScavTrap " << this->name
 				 << " created (Copy constructor)" << RESET << std::endl;
@@ -49,6 +47,10 @@ ScavTrap& ScavTrap::operator=(const ScavTrap &other) {
 	return (*this);
 }
 
+ScavTrap::~ScavTrap() {
+	std::cout	<< YELLOW <<  "ScavTrap destroyed"
+				 << RESET << std::endl;
+}
 
 // -------------------------- //
 

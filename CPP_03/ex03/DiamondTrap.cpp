@@ -13,32 +13,33 @@
 #include "DiamondTrap.hpp"
 
 DiamondTrap::DiamondTrap() {
+	FragTrap::hitPoints = 100;
+	ScavTrap::energyPoints = 50;
+	FragTrap::attackDamage = 30;
 	std::cout	<< YELLOW <<  "DiamondTrap created"
 				 << RESET << std::endl;
 }
 
-/*DiamondTrap::DiamondTrap(std::string name) {
-*//*	this->name = name;
-	this->hitPoints = 100;
-	this->energyPoints = 100;
-	this->attackDamage = 30;*//*
+DiamondTrap::DiamondTrap(const std::string& name) : ClapTrap(name), FragTrap(name), ScavTrap(name){
+	this->name = name;
+	ClapTrap::name = name + "_clap_name";
+	FragTrap::hitPoints = 100;
+	ScavTrap::energyPoints = 50;
+	FragTrap::attackDamage = 30;
 	std::cout	<< YELLOW << "DiamondTrap " << this->name << " created" << RESET
 				 << std::endl;
-}*/
-
-DiamondTrap::~DiamondTrap() {
-	std::cout	<< YELLOW <<  "DiamondTrap destroyed"
-				 << RESET << std::endl;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap& other) {
+DiamondTrap::DiamondTrap(const DiamondTrap& other)
+	: ClapTrap(other), FragTrap(other), ScavTrap(other) {
 	*this = other;
-	std::cout	<< YELLOW << "DiamondTrap " << this->name
-				 << " created (Copy constructor)" << RESET << std::endl;
+	std::cout	<< YELLOW << "DiamondTrap created (Copy constructor)"
+				<< RESET << std::endl;
 }
 
 DiamondTrap& DiamondTrap::operator=(const DiamondTrap &other) {
 	if (this != &other) {
+		ClapTrap::name = (name + "_clap_name");
 		name = other.name;
 		hitPoints = other.hitPoints;
 		energyPoints = other.energyPoints;
@@ -49,6 +50,10 @@ DiamondTrap& DiamondTrap::operator=(const DiamondTrap &other) {
 	return (*this);
 }
 
+DiamondTrap::~DiamondTrap() {
+	std::cout	<< YELLOW <<  "DiamondTrap destroyed"
+				 << RESET << std::endl;
+}
 
 // -------------------------- //
 

@@ -13,11 +13,14 @@
 #include "FragTrap.hpp"
 
 FragTrap::FragTrap() {
+	this->hitPoints = 100;
+	this->energyPoints = 100;
+	this->attackDamage = 30;
 	std::cout	<< YELLOW <<  "FragTrap created"
 				 << RESET << std::endl;
 }
 
-FragTrap::FragTrap(std::string name) {
+FragTrap::FragTrap(const std::string& name) {
 	this->name = name;
 	this->hitPoints = 100;
 	this->energyPoints = 100;
@@ -26,12 +29,7 @@ FragTrap::FragTrap(std::string name) {
 				 << std::endl;
 }
 
-FragTrap::~FragTrap() {
-	std::cout	<< YELLOW <<  "FragTrap destroyed"
-				 << RESET << std::endl;
-}
-
-FragTrap::FragTrap(const FragTrap& other) {
+FragTrap::FragTrap(const FragTrap& other) : ClapTrap(other) {
 	*this = other;
 	std::cout	<< YELLOW << "FragTrap " << this->name
 				 << " created (Copy constructor)" << RESET << std::endl;
@@ -49,6 +47,10 @@ FragTrap& FragTrap::operator=(const FragTrap &other) {
 	return (*this);
 }
 
+FragTrap::~FragTrap() {
+	std::cout	<< YELLOW <<  "FragTrap destroyed"
+				 << RESET << std::endl;
+}
 
 // -------------------------- //
 
@@ -57,4 +59,3 @@ void FragTrap::highFivesGuy() {
 	std::cout	<< CYAN << "FragTrap " << this->name
 				 << " is giving a high five!" << RESET << std::endl;
 }
-
