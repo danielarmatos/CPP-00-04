@@ -53,6 +53,16 @@ Fixed::Fixed(const int value) {
 	this->fixedPoint = value * scaleFactor;
 }
 
+/* For example, we get the value 1234,4321 and we want to store it as an int
+ * (without the decimal separator). We do this to get the scale factor:
+ * 1234.43 × 2^8 = 316014
+ * or
+ * 1234.43 × (1 << 8)
+ * both 2^8 and 1<<8 equals 256
+ * fixed point numbers in this format have 8 bits for the integer part
+ * and 8 bits for the fraction part
+ * */
+
 Fixed::Fixed(const float value) {
 	std::cout << "Float constructor called" << std::endl;
 	int scaleFactor = std::pow(2, this->fractionalBits);
