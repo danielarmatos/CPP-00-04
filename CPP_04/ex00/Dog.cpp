@@ -11,8 +11,10 @@
 /* ************************************************************************** */
 
 #include "Dog.hpp"
+#include "Animal.hpp"
 
 Dog::Dog() {
+	this->type = "Dog";
 	std::cout << YELLOW << "Dog created" << RESET<< std::endl;
 }
 
@@ -37,6 +39,6 @@ Dog::~Dog() {
 
 // -------------------------- //
 
-void Dog::makeSound() {
-	std::cout << "Woof woof!" << std::endl;
+void Dog::makeSound() const {
+	std::cout << CYAN << "*Woof woof!*" << RESET << std::endl;
 }

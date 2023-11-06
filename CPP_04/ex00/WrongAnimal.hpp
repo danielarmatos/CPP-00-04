@@ -18,15 +18,17 @@
 class WrongAnimal {
 protected:
 	std::string type;
-private:
-
 public:
 	WrongAnimal();
-	WrongAnimal(std::string name);
 	WrongAnimal(const WrongAnimal &other);
 	WrongAnimal& operator=(const WrongAnimal &other);
 	~WrongAnimal();
+	//virtual ~WrongAnimal();
+	//A virtual function is a member function that is declared in the base
+	//class and is overridden in the derived class
 
+	std::string getType() const;
+	void makeSound() const;
 };
 
 #endif

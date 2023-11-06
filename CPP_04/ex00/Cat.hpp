@@ -20,12 +20,11 @@ private:
 
 public:
 	Cat();
-	Cat(std::string name);
 	Cat(const Cat &other);
 	Cat& operator=(const Cat &other);
 	~Cat();
 
-	void makeSound();
+	void makeSound() const;
 };
 
 #endif

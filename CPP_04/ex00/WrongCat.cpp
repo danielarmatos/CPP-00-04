@@ -11,8 +11,10 @@
 /* ************************************************************************** */
 
 #include "WrongCat.hpp"
+#include "Animal.hpp"
 
 WrongCat::WrongCat() {
+	this->type = "Wrong Cat";
 	std::cout << YELLOW << "WrongCat created" << RESET<< std::endl;
 }
 
@@ -32,8 +34,5 @@ WrongCat& WrongCat::operator=(const WrongCat &other) {
 }
 
 WrongCat::~WrongCat() {
-	std::cout << YELLOW << "WrongCat destroyed" << RESET << std::endl;
+	std::cout << RED << "WrongCat destroyed" << RESET << std::endl;
 }
-
-// -------------------------- //
-

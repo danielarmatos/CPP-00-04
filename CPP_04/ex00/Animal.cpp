@@ -13,6 +13,7 @@
 #include "Animal.hpp"
 
 Animal::Animal() {
+	this->type = "Default";
 	std::cout << YELLOW << "Animal created" << RESET<< std::endl;
 }
 
@@ -36,3 +37,11 @@ Animal::~Animal() {
 }
 
 // -------------------------- //
+
+std::string Animal::getType() const {
+	return (this->type);
+}
+
+void Animal::makeSound() const {
+	std::cout << CYAN << "*animal sound*" << RESET << std::endl;
+}

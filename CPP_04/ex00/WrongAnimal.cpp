@@ -11,8 +11,10 @@
 /* ************************************************************************** */
 
 #include "WrongAnimal.hpp"
+#include "Animal.hpp"
 
 WrongAnimal::WrongAnimal() {
+	this->type = "Wrong default";
 	std::cout << YELLOW << "WrongAnimal created" << RESET<< std::endl;
 }
 
@@ -36,3 +38,11 @@ WrongAnimal::~WrongAnimal() {
 }
 
 // -------------------------- //
+
+std::string WrongAnimal::getType() const {
+	return (this->type);
+}
+
+void WrongAnimal::makeSound() const {
+	std::cout << CYAN << "*wrong animal sound*" << RESET << std::endl;
+}

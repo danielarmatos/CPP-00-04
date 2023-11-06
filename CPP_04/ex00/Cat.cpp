@@ -11,8 +11,10 @@
 /* ************************************************************************** */
 
 #include "Cat.hpp"
+#include "Animal.hpp"
 
 Cat::Cat() {
+	this->type = "Cat";
 	std::cout << YELLOW << "Cat created" << RESET<< std::endl;
 }
 
@@ -37,6 +39,6 @@ Cat::~Cat() {
 
 // -------------------------- //
 
-void Cat::makeSound() {
-	std::cout << "Miau!" << std::endl;
+void Cat::makeSound() const {
+	std::cout << CYAN << "*Miau!*" << RESET << std::endl;
 }

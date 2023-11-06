@@ -25,15 +25,15 @@
 class Animal {
 protected:
 	std::string type;
-private:
 
 public:
 	Animal();
-	Animal(std::string name);
 	Animal(const Animal &other);
 	Animal& operator=(const Animal &other);
-	~Animal();
+	virtual ~Animal();
 
+	std::string getType() const;
+	virtual void makeSound() const;
 };
 
 #endif
