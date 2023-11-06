@@ -22,8 +22,7 @@ public:
 	WrongAnimal();
 	WrongAnimal(const WrongAnimal &other);
 	WrongAnimal& operator=(const WrongAnimal &other);
-	~WrongAnimal();
-	//virtual ~WrongAnimal();
+	virtual ~WrongAnimal();
 	//A virtual function is a member function that is declared in the base
 	//class and is overridden in the derived class
 
