@@ -25,18 +25,13 @@
 class Animal {
 protected:
 	std::string type;
-
 public:
 	Animal();
 	Animal(const Animal &other);
 	Animal& operator=(const Animal &other);
 	virtual ~Animal();
-	/* If the destructor is not virtual, when you delete a Cat or Dog, only
-	the Animal destructor will be called, and the Dog/Cat and Brain destructor
-	won't be called */
-
 	std::string getType() const;
-	virtual void makeSound() const;
+	virtual void makeSound() const = 0;
 };
 
 #endif

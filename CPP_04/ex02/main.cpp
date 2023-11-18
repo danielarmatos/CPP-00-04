@@ -16,33 +16,9 @@
 
 int main()
 {
-	int numb = 11;
-	int x = 0;
-
 	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+	j->makeSound();
 	delete j;
-	delete i;
 
-	std::cout << std::endl;
-
-	const Animal* animals[numb];
-	while (x < (numb/2))
-		animals[x++] = new Dog();
-	while (x < numb)
-		animals[x++] = new Cat();
-
-	std::cout << std::endl;
-
-	for (int x = 0; x < numb; x++)
-		delete animals[x];
-
-	std::cout << std::endl;
-	std::cout << std::endl;
-
-	// Example from the evaluation:
-	Dog basic;
-	std::cout << std::endl;
-	Dog temp = basic;
-	std::cout << std::endl;
+	Animal test;
 }
