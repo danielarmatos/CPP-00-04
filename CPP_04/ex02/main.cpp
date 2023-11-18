@@ -20,5 +20,5 @@ int main()
 	j->makeSound();
 	delete j;
 
-	Animal test;
+	//Animal test;
 }
