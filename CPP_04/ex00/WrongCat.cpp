@@ -34,7 +34,7 @@ WrongCat& WrongCat::operator=(const WrongCat &other) {
 }
 
 WrongCat::~WrongCat() {
-	std::cout << RED << "WrongCat destroyed" << RESET << std::endl;
+	std::cout << YELLOW << "WrongCat destroyed" << RESET << std::endl;
 }
 
 void WrongCat::makeSound() const {

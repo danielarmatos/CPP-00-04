@@ -19,27 +19,39 @@
 int main()
 {
 	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	std::cout << meta->getType() << " " << std::endl;
-	i->makeSound();
-	j->makeSound();
+	std::cout << "Type: " << meta->getType() << std::endl;
 	meta->makeSound();
+	std::cout << std::endl;
 
+	const Animal* j = new Dog();
+	std::cout << "Type: " << j->getType() << std::endl;
+	j->makeSound();
+	std::cout << std::endl;
+
+	const Animal* i = new Cat();
+	std::cout << "Type: " << i->getType() << std::endl;
+	i->makeSound();
+
+	std::cout << std::endl << "Wrong animals:" << std::endl;
 	const WrongAnimal* wrongMeta = new WrongAnimal();
-	const WrongAnimal* wrongI = new WrongCat();
-	std::cout << wrongI->getType() << " " << std::endl;
-	std::cout << wrongMeta->getType() << " " << std::endl;
-	wrongI->makeSound();
+	std::cout << "Type: " << wrongMeta->getType() << std::endl;
 	wrongMeta->makeSound();
+	std::cout << std::endl;
 
+	const WrongAnimal* wrongI = new WrongCat();
+	std::cout << "Type: " << wrongI->getType() << std::endl;
+	wrongI->makeSound();
+	std::cout << std::endl;
+
+	const WrongCat* wrongC = new WrongCat();
+	std::cout << "Type: " << wrongC->getType() << std::endl;
+	wrongC->makeSound();
+	std::cout << std::endl;
 
 	delete(meta);
 	delete(j);
 	delete(i);
 	delete(wrongI);
 	delete(wrongMeta);
-	return 0;
+	delete(wrongC);
 }
