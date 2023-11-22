@@ -25,13 +25,15 @@
 class Animal {
 protected:
 	std::string type;
-public:
 	Animal();
+public:
 	Animal(const Animal &other);
 	Animal& operator=(const Animal &other);
 	virtual ~Animal();
 	std::string getType() const;
 	virtual void makeSound() const = 0;
+	/* A Class can be non instantiable by declaring its constructor as private
+	   or by using a pure virtual function with a "= 0" (pure-specifier) */
 };
 
 #endif
