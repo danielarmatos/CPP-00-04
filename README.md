@@ -2,8 +2,8 @@
 Object-Oriented Programming
 
 This repository contains my solutions and implementations for the projects related to the C++ Modules at 42 School.
-
-
+<br>
+<br>
 ## Module 00: Introduction to C++
 
 The first module of C++ is designed to help understanding the specificities of the language when compared to C.
@@ -24,7 +24,7 @@ Mastering the concept of Inheritance in CPP.
 
 Diving into Subtype polymorphism, abstract classes, and interfaces in CPP.
 
-
+<br>
 
 
 Feel free to explore the projects in each module's directory for detailed implementations and solutions.
